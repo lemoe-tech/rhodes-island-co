@@ -36,11 +36,14 @@
   let i = 1;
   assets.forEach(function(item) {
     $.ajax({
-      url: "/assets/" + item,
+      url: "assets/" + item,
       async: true,
       success: function() {
         if (i++ === assets_len) {
           console.log("Done!");
+          var audio = document.getElementById("bgm");
+          audio.src = "assets/audio/title_intro.mp3";
+          audio.play();
         }
       }
     });
