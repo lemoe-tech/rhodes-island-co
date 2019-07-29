@@ -53,8 +53,10 @@
             $("audio").unbind();
           });
           setTimeout(function() {
+            setTimeout(function() {
+              $(".background").fadeOut();
+            }, 1000);
             $("#loading").fadeOut();
-            $(".background").fadeOut();
           }, 2500);
           setTimeout(function() {
             $(".background").css(
