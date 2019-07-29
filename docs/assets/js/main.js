@@ -44,10 +44,10 @@
           console.log("Done!");
           var audio = document.getElementById("bgm");
           audio.src = "assets/audio/title_intro.mp3";
-          // audio.play();
+          audio.play();
           $("audio").bind("ended", function() {
             audio.src = "assets/audio/title_loop.mp3";
-            // audio.play();
+            audio.play();
             $("#bgm").attr("loop", "");
             $("audio").unbind();
           });
