@@ -30,7 +30,6 @@
   let assets = [
     "audio/title_intro.mp3",
     "audio/title_loop.mp3",
-    "image/title-logo.png",
     "image/title-rhodes-island.png",
     "image/title-ori.png"
   ];
@@ -45,13 +44,24 @@
           console.log("Done!");
           var audio = document.getElementById("bgm");
           audio.src = "assets/audio/title_intro.mp3";
-          audio.play();
+          // audio.play();
           $("audio").bind("ended", function() {
             audio.src = "assets/audio/title_loop.mp3";
-            audio.play();
-            $("#bgm").attr("loop");
+            // audio.play();
+            $("#bgm").attr("loop", "");
             $("audio").unbind();
           });
+          setTimeout(function() {
+            $("#loading").fadeOut();
+            $(".background").fadeOut();
+          }, 2500);
+          setTimeout(function() {
+            $(".background").css(
+              "background",
+              'url("assets/image/title-ori.png")  center center no-repeat'
+            );
+            $(".background").fadeIn();
+          }, 5000);
         }
       }
     });
