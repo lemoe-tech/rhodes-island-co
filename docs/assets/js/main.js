@@ -24,6 +24,8 @@
       document.webkitCancelFullScreen();
     }
   }
+  //强制横屏
+
   //资源文件
   let assets = [
     "audio/title_intro.mp3",
@@ -44,8 +46,38 @@
           var audio = document.getElementById("bgm");
           audio.src = "assets/audio/title_intro.mp3";
           audio.play();
+          $("audio").bind("ended", function() {
+            audio.src = "assets/audio/title_loop.mp3";
+            audio.play();
+            $("#bgm").attr("loop");
+            $("audio").unbind();
+          });
         }
       }
     });
   });
+
+  var detectOrient = function() {
+    var width = document.documentElement.clientWidth,
+      height = document.documentElement.clientHeight,
+      $wrapper = document.getElementById("content"),
+      style = "";
+    if (width >= height) {
+      style += "width:" + width + "px;";
+      style += "height:" + height + "px;";
+      style += "-webkit-transform: rotate(0); transform: rotate(0);";
+      style += "-webkit-transform-origin: 0 0;";
+      style += "transform-origin: 0 0;";
+    } else {
+      style += "width:" + height + "px;";
+      style += "height:" + width + "px;";
+      style += "-webkit-transform: rotate(90deg); transform: rotate(90deg);";
+      style +=
+        "-webkit-transform-origin: " + width / 2 + "px " + width / 2 + "px;";
+      style += "transform-origin: " + width / 2 + "px " + width / 2 + "px;";
+    }
+    $wrapper.style.cssText = style;
+  };
+  window.onresize = detectOrient;
+  detectOrient();
 })();
