@@ -2,104 +2,21 @@
 <html lang="zh-cn">
   <head>
     <meta charset="utf-8" />
+    <title>Rhodes Island - Arknights</title>
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="description"
+      content="罗德岛制药公司作为感染者问题专家，聘用感染者，深入危险地区，通过种种手段，已经成功解决了数起感染者引发的事件。而今，他们将面对史无前例的感染者暴乱。在各个势力间游走，发掘不为人知的内幕，抵挡感染者的疯狂进攻，你的决策将决定罗德岛的方向。"
+    />
+    <meta
+      name="keywords"
+      content="骡的岛, 罗德岛, 明日方舟, 二次元, 阿米娅到底是兔子还是驴, "
+    />
     <meta content="user-scalable=0" name="viewport" />
     <meta name="theme-color" content="#515A5A" />
-    <title>Rhodes Island - Arknights</title>
     <link rel="shortcut icon" href="favicon.ico" />
-    <style>
-      body {
-        background-color: black;
-      }
-      .background {
-        background: url("assets/image/title.png") center center no-repeat;
-        background-size: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        min-width: 900px;
-        z-index: -10;
-        zoom: 1;
-        background-repeat: no-repeat;
-        background-size: cover;
-        -webkit-background-size: cover;
-        -o-background-size: cover;
-        background-position: center 0;
-      }
-      #loading {
-        left: 10px;
-        top: -90px;
-        position: fixed;
-      }
-      html {
-        overflow: -moz-hidden-unscrollable;
-        height: 100%;
-      }
-      body::-webkit-scrollbar {
-        display: none;
-      }
-      body {
-        -ms-overflow-style: none;
-        height: 100%;
-        width: calc(100vw + 18px);
-        overflow: auto;
-      }
-      #content {
-        width: 100vw;
-      }
-      .spinner {
-        width: 40px;
-        height: 40px;
-
-        position: relative;
-        margin: 100px auto;
-      }
-
-      .double-bounce1,
-      .double-bounce2 {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background-color: #333;
-        opacity: 0.6;
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        -webkit-animation: sk-bounce 2s infinite ease-in-out;
-        animation: sk-bounce 2s infinite ease-in-out;
-      }
-
-      .double-bounce2 {
-        -webkit-animation-delay: -1s;
-        animation-delay: -1s;
-      }
-
-      @-webkit-keyframes sk-bounce {
-        0%,
-        100% {
-          -webkit-transform: scale(0);
-        }
-        50% {
-          -webkit-transform: scale(1);
-        }
-      }
-
-      @keyframes sk-bounce {
-        0%,
-        100% {
-          transform: scale(0);
-          -webkit-transform: scale(0);
-        }
-        50% {
-          transform: scale(1);
-          -webkit-transform: scale(1);
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="assets/css/main.css" />
   </head>
 
   <body>
@@ -109,11 +26,37 @@
         <div class="double-bounce1"></div>
         <div class="double-bounce2"></div>
       </div>
-      <audio id="bgm"></audio>
+      <!-- <div class="progress">
+        <div class="progress-bar-mask"></div>
+        <div class="progress-bar"></div> 
+        <div class="progress-num"></div>
+      </div> -->
+      <div class="world_tip">
+        <p id="word"></p>
+        <p id="detail"></p>
+      </div>
+
+      <div class="audio">
+        <iframe
+          src="assets/audio/silence.mp3"
+          allow="autoplay"
+          id="audio"
+        ></iframe>
+        <audio
+          id="bgm-intro"
+          src="assets/audio/title_intro.mp3"
+          autoplay
+        ></audio>
+        <audio
+          id="bgm-loop"
+          src="assets/audio/title_loop.mp3"
+          preload="auto"
+          loop
+        ></audio>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <script type="text/javascript"></script>
   </body>
 </html>
