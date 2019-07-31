@@ -100,3 +100,18 @@ body {
   width: 100%;
   height: 5px;
 } */
+
+.world_tip {
+  display: none;
+  color: #ececec;
+  position: fixed;
+  bottom: 12.5%;
+  left: 15%;
+  right: 15%;
+}
+
+#word {
+  font-size: 2em;
+  font-family: sans-serif;
+}
+

@@ -79,6 +79,7 @@
               'url("assets/image/title-ori.png")  center center no-repeat'
             );
             $(".background").css("background-size", "100%");
+            $(".world_tip").fadeIn();
             $(".background").fadeIn();
           }, 5000);
         }
