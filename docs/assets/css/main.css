@@ -1,4 +1,11 @@
 body {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+body {
   background-color: black;
 }
 .background {
@@ -114,4 +121,3 @@ body {
   font-size: 2em;
   font-family: sans-serif;
 }
-

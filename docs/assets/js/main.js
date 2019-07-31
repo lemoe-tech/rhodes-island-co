@@ -3,7 +3,7 @@
   //全屏
   if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
   } else if (!/(Android)/i.test(navigator.userAgent)) {
-    $(".background").click(function() {
+    $("body").click(function() {
       if (
         !document.fullscreenElement &&
         !document.mozFullScreenElement &&
