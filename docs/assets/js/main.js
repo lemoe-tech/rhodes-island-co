@@ -1,5 +1,32 @@
 (function() {
   "use strict";
+  //打字效果
+    $.fn.autotype = function() {
+      var $text = $(this);
+
+      console.log('$text:', $text);
+      var str = $text.html();
+      console.log('str:', str);
+      var index = 0;
+      var x = $text.html('');
+      console.log('x:', x);
+      var timer = setInterval(function() {
+          if(index === 0){
+            // this.html();
+          }
+          var current = str.substr(index, 1);
+
+          if (current == '<') {
+              index = str.indexOf('>', index) + 1;
+          } else {
+              index++;
+          }
+          $text.html(str.substring(0, index) + (index & 1 ? '_' : ''));
+          index > $text.html().length + 10 && (index = 0);
+
+      }, 60);
+  };
+
   //全屏
   if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
   } else if (!/(Android)/i.test(navigator.userAgent)) {
@@ -38,7 +65,7 @@
     "image/title-ori.png",
     "image/worldtip1.png",
     "image/worldtip2.png",
-    "image/worldtip3.png",
+    // "image/worldtip3.png",
     "image/worldtip5.png"
   ];
   //介绍
@@ -81,6 +108,8 @@
             $(".background").css("background-size", "100%");
             $(".world_tip").fadeIn();
             $(".background").fadeIn();
+            // $("#detail").text(world_tip[world_tip_index]);
+            $("#detail").autotype();
           }, 5000);
         }
       }
